@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Burger from "./Burger";
+import header from "../Assets/css/header.css";
 
 function Header() {
   const [isHamburgerOpen, setHamburger] = useState(false);
@@ -11,13 +13,15 @@ function Header() {
 
   return (
     <header>
-      <section class="header-container">
+      <section className="header-container">
         <Burger isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />
         <div className="title">
-          <h1>World Journal</h1>
+          <Link className="nav-link" to="/">
+            World Journal
+          </Link>
         </div>
       </section>
-      <Navbar isHamburgerOpen={isHamburgerOpen} />
+      <Navbar isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />
     </header>
   );
 }
