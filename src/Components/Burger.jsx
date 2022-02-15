@@ -6,13 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 function Burger({ isHamburgerOpen, showSidebar }) {
   return (
     <div className="hamburger" onClick={showSidebar}>
-      <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
-      >
+      <IconButton color="inherit">
         {isHamburgerOpen ? <CloseIcon /> : <MenuIcon />}
       </IconButton>
     </div>
