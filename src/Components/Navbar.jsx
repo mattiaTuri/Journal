@@ -1,37 +1,66 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
+import Pages from "../Pages/Pages";
 
 function Navbar({ isHamburgerOpen }) {
-
-  const [sections, setSectionArticles] = useState([])
+  const [sections, setSectionArticles] = useState([]);
 
   useEffect(() => {
-    axios.get("https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T")
-      .then(res =>{     
-        setSectionArticles(res.data.results)   
+    axios
+      .get(
+        "https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
+      )
+      .then((res) => {
+        setSectionArticles(res.data.results);
       })
-      .catch(error => {
-        console.log(error)
-      })
-  },[]);
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    
-    <nav
-      className={isHamburgerOpen ? "navigation-menu active" : "navigation-menu"}
-    >
-      <h3>Sections</h3>
-      <div className="nav-menu-link">
-
-        {sections.slice(1).map(section => {
-          return <NavLink key={section.section}
-          className="nav-link"
-          to="/art"
-        >{section.display_name}</NavLink>
-        })}
+    <>
+      <nav className="navbar-desktop">
+        <NavLink className="nav-link" to="/pages">
+          Ciao
+        </NavLink>
+        <NavLink className="nav-link" to="/pages">
+          Ciao
+        </NavLink>
+        <NavLink className="nav-link" to="/pages">
+          Ciao
+        </NavLink>
+        <NavLink className="nav-link" to="/pages">
+          Ciao
+        </NavLink>
+        <NavLink className="nav-link" to="/pages">
+          Ciao
+        </NavLink>
+      </nav>
+      <div
+        className={
+          isHamburgerOpen
+            ? "navigation-menu-left active"
+            : "navigation-menu-left"
+        }
+      >
+        <h3>Sections</h3>
+        <div className="nav-menu-link">
+          {sections.slice(1).map((section) => {
+            return (
+              <Link
+                key={section.section}
+                className="nav-link"
+                to={`/${section.display_name}`}
+              >
+                {section.display_name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
 

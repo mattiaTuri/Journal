@@ -13,15 +13,15 @@ function Header() {
 
   return (
     <header>
-      <section className="header-container">       
-        <div className="title">         
+      <section className="header-container">
+        <div className="title">
           <Link className="nav-link" to="/">
             World Journal
           </Link>
-        </div>   
-        <Burger isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />      
+        </div>
+        <Burger isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />
       </section>
-      <Navbar isHamburgerOpen={isHamburgerOpen}/>
+      <Navbar isHamburgerOpen={isHamburgerOpen} />
     </header>
   );
 }
