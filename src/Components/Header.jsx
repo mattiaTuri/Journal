@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Burger from "./Burger";
@@ -13,15 +13,15 @@ function Header() {
 
   return (
     <header>
-      <section className="header-container">
-        <Burger isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />
-        <div className="title">
+      <section className="header-container">       
+        <div className="title">         
           <Link className="nav-link" to="/">
             World Journal
           </Link>
-        </div>
+        </div>   
+        <Burger isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />      
       </section>
-      <Navbar isHamburgerOpen={isHamburgerOpen} showSidebar={showSidebar} />
+      <Navbar isHamburgerOpen={isHamburgerOpen}/>
     </header>
   );
 }
