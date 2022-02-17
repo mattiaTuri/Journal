@@ -22,20 +22,20 @@ function Navbar({ isHamburgerOpen }) {
   return (
     <>
       <nav className="navbar-desktop">
-        <NavLink className="nav-link" to="/pages">
-          Ciao
+        <NavLink className="nav-link" to="/Arts">
+          Arts
         </NavLink>
-        <NavLink className="nav-link" to="/pages">
-          Ciao
+        <NavLink className="nav-link" to="/Business">
+          Business
         </NavLink>
-        <NavLink className="nav-link" to="/pages">
-          Ciao
+        <NavLink className="nav-link" to="/Sports">
+          Sports
         </NavLink>
-        <NavLink className="nav-link" to="/pages">
-          Ciao
+        <NavLink className="nav-link" to="/Tech">
+          Tech
         </NavLink>
-        <NavLink className="nav-link" to="/pages">
-          Ciao
+        <NavLink className="nav-link" to="/World">
+          World
         </NavLink>
       </nav>
       <div
