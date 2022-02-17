@@ -1,40 +1,27 @@
-import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import axios from "axios";
-import Pages from "../Pages/Pages";
+import useFetch from "../Hooks/useFetch";
 
 function Navbar({ isHamburgerOpen }) {
-  const [sections, setSectionArticles] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
-      )
-      .then((res) => {
-        setSectionArticles(res.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { sections } = useFetch(
+    "https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
+  );
 
   return (
     <>
       <nav className="navbar-desktop">
-        <NavLink className="nav-link" to="/Arts">
+        <NavLink className="nav-link" to="/arts">
           Arts
         </NavLink>
-        <NavLink className="nav-link" to="/Business">
+        <NavLink className="nav-link" to="/business">
           Business
         </NavLink>
-        <NavLink className="nav-link" to="/Sports">
+        <NavLink className="nav-link" to="/sports">
           Sports
         </NavLink>
-        <NavLink className="nav-link" to="/Tech">
+        <NavLink className="nav-link" to="/tech">
           Tech
         </NavLink>
-        <NavLink className="nav-link" to="/World">
+        <NavLink className="nav-link" to="/world">
           World
         </NavLink>
       </nav>
@@ -52,7 +39,7 @@ function Navbar({ isHamburgerOpen }) {
               <Link
                 key={section.section}
                 className="nav-link"
-                to={`/${section.display_name}`}
+                to={`/${section.section}`}
               >
                 {section.display_name}
               </Link>

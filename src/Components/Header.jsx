@@ -14,7 +14,7 @@ function Header() {
   return (
     <header>
       <section className="header-container">
-        <div className="title">
+        <div className="header-title">
           <Link className="nav-link" to="/">
             World Journal
           </Link>
