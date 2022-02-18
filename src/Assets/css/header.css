@@ -3,93 +3,58 @@
     src: url("../Font/Takota.ttf");
   }
 
-header{
-  width: 100%;
+.header-container{
+  border-bottom:1px solid rgba(0, 0, 0, 0.12);
 }
 
-.header-container {
-  border-bottom: 1px solid #e2e2e2;
-  }
-  
-.header-title {
-  font-family: "Takota";
-  font-size: 25px;
-  text-align: center;
-  position: relative;
-  top:20px;
-  }
+.header-title{
+  font-family: "Takota" !important;
+  font-size:20px !important;
+}
 
-  .navbar-desktop{
-    display: none;
-  }
+.header-icon{
+  position: absolute !important;
+  right: 0 !important;
+}
 
-  .navigation-menu-left {
-    position: fixed;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    transition: 0.3s ease-in-out;
-    background-color: white;
-  }
-  
-  .navigation-menu-left.active {
-    left: 0px;
-    transition: 0.3s ease-in-out;
-  }
-  
-  h3{
-    text-align: center;
-  }
+.nav-link{
+  text-decoration: none;
+  color:black;
+}
 
-  .nav-menu-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .hamburger{
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    bottom: 16px;
-  }
+.navbar{
+  display: none;
+}
 
+.MuiPaper-root{
+  width: 250px;
+}
 
 /*----------Desktop----------*/
+
 @media screen and (min-width: 1000px) {
 
   header{
-    max-width: 1320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 0px !important;
+    max-width: 1150px;  
+    border-bottom:1px solid rgba(0, 0, 0, 0.12);
   }
 
   .header-container{
-    width: 100%;
-  }
-  
-    .navigation-menu-left {
-      width: 250px;
-      box-shadow: 3px 3px 10px 0px #000000;
-    }
-
-    .navbar-desktop{
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      border-bottom: 1px solid #e2e2e2;
-    }
-
-    .nav-link{
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }  
+    height: 10vh;
+    margin-bottom: 15px;
   }
 
+  .header-title{
+    font-size: 40px !important;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+
+  .navbar-line{
+    display: block;
+  }
+}
