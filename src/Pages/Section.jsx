@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import Articles from "./Articles";
+import { Container } from "@mui/material";
 
 function Section() {
   const currentLocation = useLocation();
@@ -16,6 +17,7 @@ function Section() {
   );
 
   return (
+    <Container>
     <div className="section-articles">
       {articles.map((article) => {
         return (
@@ -28,6 +30,7 @@ function Section() {
         );
       })}
     </div>
+    </Container>
   );
 }
 
