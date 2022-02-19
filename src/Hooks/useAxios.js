@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function useFetch(url) {
+function useAxios(url) {
   const [sections, setSections] = useState([]);
   const [articles, setArticles] = useState([]);
 
@@ -20,4 +20,4 @@ function useFetch(url) {
   return { sections, articles };
 }
 
-export default useFetch;
+export default useAxios;

@@ -3,8 +3,12 @@
     src: url("../Font/Takota.ttf");
   }
 
+header{
+  border-bottom:1px solid rgba(0, 0, 0, 0.54);
+}
+
 .header-container{
-  border-bottom:1px solid rgba(0, 0, 0, 0.12);
+  border-bottom:1px solid rgba(0, 0, 0, 0.54);
 }
 
 .header-title{
@@ -17,12 +21,30 @@
   right: 0 !important;
 }
 
-.nav-link{
+.navbar{
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+}
+
+.date{
+  margin-bottom: 0 !important;
+  font-size: 12px !important;
+}
+
+.date-mobile{
+  margin-left: 10px;
+}
+
+.date-desktop{
+  display: none !important;
+}
+
+.nav-link, .link{
   text-decoration: none;
   color:black;
 }
 
-.navbar{
+.nav-link{
   display: none;
 }
 
@@ -36,25 +58,33 @@
 
   header{
     max-width: 1150px;  
-    border-bottom:1px solid rgba(0, 0, 0, 0.12);
   }
 
   .header-container{
     height: 10vh;
-    margin-bottom: 15px;
   }
 
   .header-title{
     font-size: 40px !important;
   }
 
+  .date-desktop{
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+  }
+
+  .date-mobile{
+    display: none !important;
+  }
+
   .navbar{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
   }
 
-  .navbar-line{
+  .nav-link{
     display: block;
   }
+
 }
