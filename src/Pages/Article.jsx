@@ -9,14 +9,22 @@ import Typography from "@mui/material/Typography";
 function Article({ title, url, description }) {
   return (
     <>
-      <Card sx={{ marginTop: 5 }} className="card-article">
-        <CardHeader title={title} sx={{ textAlign: "center" }}></CardHeader>
-        <CardMedia component="img" image={url || defaultImage} />
+    <Card sx={{ display: 'flex', marginTop: 5 }} className="card-article">
         <CardContent>
-          <p>{description}</p>
-          <Link href="#">Continue reading</Link>
+          <Typography variant="h6" element="h6">
+            {title}
+          </Typography>
+          <Typography variant="subtitle2" color="text.secondary" element="body2">
+            {description}
+          </Typography>
+          <Typography><Link href="#">Continue reading</Link></Typography>       
         </CardContent>
-      </Card>
+      <CardMedia
+        component="img"
+        sx={{ width: 151 }}
+        image={url || defaultImage}
+      />
+    </Card>
     </>
   );
 }
