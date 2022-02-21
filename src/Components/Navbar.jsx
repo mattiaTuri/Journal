@@ -1,8 +1,13 @@
+import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
 
 function Navbar({ date }) {
-  return (
+
+  const currentLocation = useLocation();
+  const sectionPath = currentLocation.pathname.replace("/", "");
+
+  return (   
     <nav className="navbar">
       <div className="date-mobile">
         <Typography
@@ -14,7 +19,7 @@ function Navbar({ date }) {
           {date}
         </Typography>
         <Typography variant="body2" gutterBottom>
-          International news from the world.
+          Article section: <strong>{sectionPath}</strong>
         </Typography>
       </div>
 
