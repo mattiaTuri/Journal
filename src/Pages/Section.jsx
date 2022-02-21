@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import useAxios from "../Hooks/useAxios";
 import Article from "./Article";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Card, CardContent, CardHeader, CardMedia } from "@mui/material";
 import { Link } from "@mui/material";
 import header from "../Assets/css/articles.css";
@@ -19,22 +19,20 @@ function Section() {
 
   return (
     <Container sx={{ justifyContent: "center" }}>
-      <div className="section-articles">
         {articles.map((article, i) => {
           if (i === 0) {
             return (
-              <Card
-                sx={{ marginTop: 20 }}
-                className="main-article card-article"
+              <Card 
+                sx={{ marginTop: 20, position:"relative"}}
+                className="main-article"
               >
-                <CardContent sx={{ position: "absolute" }}>
-                  <h1>{article.title}</h1>
-                  <p>{article.abstract}</p>
-                  <Link href="#">Continue reading</Link>
+                <CardContent className="main-article-content" sx={{ position: "absolute" }} >
+                  <Typography variant="h5" element="h1">{article.title}</Typography>
+                  <Typography variant="subtitle1" component="body2" gutterBottom>{article.abstract}</Typography>
+                  <Typography><Link href="#">Continue reading</Link></Typography>                
                 </CardContent>
-                <CardMedia
+                <CardMedia className="main-article-image"
                   component="img"
-                  height="194"
                   image={article.multimedia[2].url}
                 />
               </Card>
@@ -49,7 +47,6 @@ function Section() {
             />
           );
         })}
-      </div>
     </Container>
   );
 }
