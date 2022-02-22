@@ -3,11 +3,16 @@ import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
 
 function Navbar({ date }) {
-
   const currentLocation = useLocation();
-  const sectionPath = currentLocation.pathname.replace("/", "");
+  let sectionPath;
 
-  return (   
+  if (currentLocation.pathname === "/") {
+    sectionPath = "home page";
+  } else {
+    sectionPath = currentLocation.pathname.replace("/", "");
+  }
+
+  return (
     <nav className="navbar">
       <div className="date-mobile">
         <Typography
@@ -19,7 +24,7 @@ function Navbar({ date }) {
           {date}
         </Typography>
         <Typography variant="body2" gutterBottom>
-          Article section: <strong>{sectionPath}</strong>
+          Article section: <strong>{sectionPath.toUpperCase()}</strong>
         </Typography>
       </div>
 

@@ -4,12 +4,14 @@
   }
 
 .header-container{
-  border-bottom:1px solid rgba(0, 0, 0, 0.54);
+  border-bottom:1px solid rgba(0, 0, 0, 0.12);
 }
 
 .header-title{
   font-family: "Takota" !important;
   font-size:25px !important;
+  text-decoration: none;
+  color:black
 }
 
 .header-icon{
@@ -38,6 +40,17 @@
 
 .nav-link{
   display: none;
+}
+
+.MuiPaper-elevation{
+  width: 50%;
+}
+
+@media screen and (min-width: 800px) {
+
+  .MuiPaper-elevation{
+    width: 250px;
+  }
 }
 
 /*----------Desktop----------*/
@@ -70,5 +83,4 @@
   .nav-link{
     display: block;
   }
-
 }

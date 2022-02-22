@@ -13,3 +13,23 @@
 .main-article-content{
     color:white;
 }
+
+@media screen and (min-width: 800px) {
+    .main-article-content{
+        width: 50%;
+    }
+
+    h5{
+        font-size: 40px !important;
+    }
+
+    .sub-article{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 30px;
+
+    }
+}
+
+
+
