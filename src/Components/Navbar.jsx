@@ -1,16 +1,12 @@
+import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { SectionContext } from "../Home";
 
-function Navbar({ date }) {
-  const currentLocation = useLocation();
-  let sectionPath;
+function Navbar({currentDate}) {
 
-  if (currentLocation.pathname === "/") {
-    sectionPath = "home page";
-  } else {
-    sectionPath = currentLocation.pathname.replace("/", "");
-  }
+  const sectionPath = useContext(SectionContext)
 
   return (
     <nav className="navbar">
@@ -21,7 +17,7 @@ function Navbar({ date }) {
           display="block"
           gutterBottom
         >
-          {date}
+          {currentDate}
         </Typography>
         <Typography variant="body2" gutterBottom>
           Article section: <strong>{sectionPath.toUpperCase()}</strong>
