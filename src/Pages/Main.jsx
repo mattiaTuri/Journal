@@ -1,11 +1,12 @@
 import React from "react";
+import useAxios from "../Hooks/useAxios";
+import Articles from "./Articles";
 
-function Main() {
-  return (
-    <section>
-      <h1>Page two</h1>
-    </section>
-  );
+function  HomePage(){
+
+    return (
+        <Articles/>
+    )
 }
 
-export default Main;
+export default HomePage
