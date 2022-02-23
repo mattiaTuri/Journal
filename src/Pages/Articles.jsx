@@ -9,10 +9,13 @@ import header from "../Assets/css/articles.css";
 import { SectionContext } from "../Home";
 
 function Articles() {
+  const sectionPath = useContext(SectionContext);
 
-  const sectionPath = useContext(SectionContext)
-
-  const { articles } = useAxios("https://api.nytimes.com/svc/topstories/v2/" + sectionPath + ".json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T")
+  const { articles } = useAxios(
+    "https://api.nytimes.com/svc/topstories/v2/" +
+      sectionPath +
+      ".json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
+  );
 
   return (
     <div className="section-article">
@@ -33,7 +36,7 @@ function Articles() {
                   element="h1"
                   sx={{ fontWeight: "bold" }}
                 >
-                  {article.title}
+                  {article.title || "Latest news"}
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -58,7 +61,7 @@ function Articles() {
       })}
       <div className="sub-article">
         {articles.map((article, i) => {
-          if (i !== 0 && article.multimedia != null) {
+          if (i !== 0 && article.title != "" && article.multimedia != null) {
             return (
               <Article
                 key={i}

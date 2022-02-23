@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import defaultImage from "../Assets/img/news-default.png";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import { Link } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -8,8 +7,17 @@ import Typography from "@mui/material/Typography";
 function Article({ title, url, description }) {
   return (
     <>
-      <Card sx={{ display: "flex", justifyContent:"space-between", marginTop: 5 }} className="card-article">
-        <CardContent sx={{display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
+      <Card
+        sx={{ display: "flex", justifyContent: "space-between", marginTop: 5 }}
+        className="card-article"
+      >
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
           <Typography variant="h6" element="h6">
             {title}
           </Typography>
@@ -24,11 +32,7 @@ function Article({ title, url, description }) {
             <Link href="#">Continue reading</Link>
           </Typography>
         </CardContent>
-        <CardMedia
-          component="img"
-          sx={{ width: 151 }}
-          image={url}
-        />
+        <CardMedia component="img" sx={{ width: 151 }} image={url} />
       </Card>
     </>
   );
@@ -41,7 +45,7 @@ Article.propTypes = {
 };
 
 Article.defaultProps = {
-  url: defaultImage,
+  title: "News of the day",
 };
 
 export default Article;
