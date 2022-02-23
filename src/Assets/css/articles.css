@@ -15,14 +15,7 @@
 }
 
 @media screen and (min-width: 800px) {
-    .main-article-content{
-        width: 50%;
-    }
-
-    h5{
-        font-size: 40px !important;
-    }
-
+    
     .sub-article{
         display: grid;
         grid-template-columns: auto auto;
@@ -31,5 +24,17 @@
     }
 }
 
+@media screen and (min-width: 1000px) {
 
+    .main-article-content{
+        width: 60%;
+    }
 
+    h5{
+        font-size: 40px !important;
+    }
+
+    .card-article{
+        height: 250px;
+    }
+}
