@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import useAxios from "../Hooks/useAxios";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,20 +11,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
-import { useLocation } from "react-router-dom";
 import header from "../Assets/css/header.css";
+import { SectionContext } from "../Home";
 import moment from "moment";
 
 function Header() {
-  let date = moment().format("LL");
-  const currentLocation = useLocation();
-  let sectionPath;
-
-  if (currentLocation.pathname === "/") {
-    sectionPath = "home page";
-  } else {
-    sectionPath = currentLocation.pathname.replace("/", "");
-  }
+  let currentDate = moment().format("LL");
+  const sectionPath = useContext(SectionContext)
 
   const [icon, setIcon] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -51,7 +44,7 @@ function Header() {
             display="block"
             gutterBottom
           >
-            {date}
+            {currentDate}
           </Typography>
           <Typography variant="body2" gutterBottom>
             Article section: <strong>{sectionPath.toUpperCase()}</strong>
@@ -64,7 +57,7 @@ function Header() {
           {icon ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Toolbar>
-      <Navbar date={date} />
+      <Navbar currentDate={currentDate}/>
       <Drawer
         anchor={"left"}
         open={menu}
@@ -76,13 +69,18 @@ function Header() {
         </Typography>
         <List>
           {sections.slice(1).map((section, i) => {
-            return (
-              <ListItem key={i}>
-                <Link className="link" to={`/${section.section}`}>
-                  {section.display_name}
-                </Link>
-              </ListItem>
-            );
+            let format = /[ /]/;
+            if(format.test(section.section)){
+              return
+            }else{
+              return (
+                <ListItem key={i}>
+                  <Link className="link" to={`/${section.section}`}>
+                    {section.display_name}
+                  </Link>
+                </ListItem>
+              );
+            }         
           })}
         </List>
       </Drawer>
