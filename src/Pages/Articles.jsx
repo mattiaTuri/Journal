@@ -1,28 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import useAxios from "../Hooks/useAxios";
 import Article from "./Article";
-import { Container, Typography } from "@mui/material";
-import { Card, CardContent, CardHeader, CardMedia } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Card, CardContent, CardMedia } from "@mui/material";
 import { Link } from "@mui/material";
-import { Grid } from "@mui/material";
 import header from "../Assets/css/articles.css";
+import { SectionContext } from "../Home";
 
-function Section() {
-  const currentLocation = useLocation();
-  const sectionPath = currentLocation.pathname;
-  const { count, setCount } = useState(1);
+function Articles() {
 
-  const { articles } = useAxios(
-    "https://api.nytimes.com/svc/news/v3/content/all" +
-      sectionPath +
-      ".json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
-  );
+  const sectionPath = useContext(SectionContext)
+
+  const { articles } = useAxios("https://api.nytimes.com/svc/topstories/v2/" + sectionPath + ".json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T")
 
   return (
     <div className="section-article">
       {articles.map((article, i) => {
-        if (i === 0) {
+        if (i === 0 && article.multimedia != null) {
           return (
             <Card
               key={i}
@@ -55,7 +50,7 @@ function Section() {
               <CardMedia
                 className="main-article-image"
                 component="img"
-                image={article.multimedia[2].url}
+                image={article.multimedia[0].url}
               />
             </Card>
           );
@@ -63,12 +58,12 @@ function Section() {
       })}
       <div className="sub-article">
         {articles.map((article, i) => {
-          if (i != 0) {
+          if (i !== 0 && article.multimedia != null) {
             return (
               <Article
                 key={i}
                 title={article.title}
-                url={article.multimedia[2].url}
+                url={article.multimedia[0].url}
                 description={article.abstract}
               />
             );
@@ -79,4 +74,4 @@ function Section() {
   );
 }
 
-export default Section;
+export default Articles;
