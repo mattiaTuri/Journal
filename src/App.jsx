@@ -1,15 +1,16 @@
 import Home from "./Home";
 import { Routes, Route } from "react-router-dom";
 import Articles from "./Pages/Articles";
-import Main from "./Pages/Main";
+import HomePage from "./Pages/HomePage";
 
 function App() {
+
   return (
     <Routes>
-      <Route path="/" element={<Home />}>
-        <Route path="/" element={<Main />} />
-        <Route path="/:id" element={<Articles />} />
-      </Route>
+        <Route path="/" element={<Home />}>
+          <Route path="/" element = {<HomePage/>}/>
+          <Route path="/:id" element={<Articles />} />
+        </Route>
     </Routes>
   );
 }
