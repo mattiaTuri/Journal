@@ -13,3 +13,10 @@ body{
   flex-direction: column;
   align-items: center;
 }
+
+.main{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
