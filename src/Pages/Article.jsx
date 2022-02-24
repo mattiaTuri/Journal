@@ -4,7 +4,7 @@ import { Card, CardContent, CardMedia } from "@mui/material";
 import { Link } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-function Article({ title, url, description }) {
+function Article({ title, img, description, info }) {
   return (
     <>
       <Card
@@ -29,10 +29,10 @@ function Article({ title, url, description }) {
             {description}
           </Typography>
           <Typography sx={{ fontWeight: "bold" }}>
-            <Link href="#">Continue reading</Link>
+            <Link href={info} target="_blank">Continue reading</Link>
           </Typography>
         </CardContent>
-        <CardMedia component="img" sx={{ width: 151 }} image={url} />
+        <CardMedia component="img" sx={{ width: 151 }} image={img} />
       </Card>
     </>
   );
