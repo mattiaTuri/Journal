@@ -5,10 +5,10 @@ function useAxios(url) {
   const [sections, setSections] = useState([]);
   const [articles, setArticles] = useState([]);
   const [status, setStatus] = useState()
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     setStatus()
       axios
       .get(url)
