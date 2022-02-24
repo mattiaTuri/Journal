@@ -14,6 +14,16 @@
     color:white;
 }
 
+.spinner{
+    border:none !important;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+}
+
+
 @media screen and (min-width: 800px) {
     
     .sub-article{
