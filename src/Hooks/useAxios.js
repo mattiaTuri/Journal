@@ -5,9 +5,13 @@ import Error from "../Pages/Error";
 function useAxios(url) {
   const [sections, setSections] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [status, setStatus] = useState()
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
+    setStatus()
+      axios
       .get(url)
       .then((res) => {
         setSections(res.data.results);
@@ -15,13 +19,12 @@ function useAxios(url) {
       })
       .catch((error) => {
         console.log(error.response.status);
-        if (error.response.status == 404) {
-          return <Error />;
-        }
-      });
+        setStatus(error.response.status);
+      });  
+      setLoading(false);
   }, [url]);
 
-  return { sections, articles };
+  return { sections, articles, loading, status };
 }
 
 export default useAxios;
