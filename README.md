@@ -30,7 +30,7 @@ Smartphone-layout
 
 ![journal-smartphone](https://user-images.githubusercontent.com/85845784/155899730-690e2e10-fbaa-43cd-8225-3cc83a92ceb9.png)
 
-Per poter utilizzare questo applicativo web è necessario scaricare i pacchetti npm tramite l'apposito comando >npm install
+Per poter utilizzare questo applicativo web è necessario scaricare i pacchetti npm tramite l'apposito comando npm install
 
 VERSIONE
 
