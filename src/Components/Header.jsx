@@ -17,7 +17,7 @@ import moment from "moment";
 
 function Header() {
   let currentDate = moment().format("LL");
-  const sectionPath = useContext(SectionContext)
+  const sectionPath = useContext(SectionContext);
 
   const [icon, setIcon] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -46,7 +46,7 @@ function Header() {
           >
             {currentDate}
           </Typography>
-          <Typography variant="body2" gutterBottom>
+          <Typography variant="body2">
             Article section: <strong>{sectionPath.toUpperCase()}</strong>
           </Typography>
         </div>
@@ -57,30 +57,38 @@ function Header() {
           {icon ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Toolbar>
-      <Navbar currentDate={currentDate}/>
+      <Navbar currentDate={currentDate} />
       <Drawer
         anchor={"left"}
         open={menu}
         onClose={toggleLeftMenu(false)}
         sx={{ width: 300 }}
       >
-        <Typography variant="h6" component="h6" sx={{ paddingLeft: 2 }}>
+        <Typography
+          variant="h6"
+          component="h6"
+          sx={{ paddingLeft: 2, paddingTop: 2 }}
+        >
           Section List
         </Typography>
         <List>
           {sections.slice(1).map((section, i) => {
             let format = /[ /]/;
-            if(format.test(section.section)){
-              return
-            }else{
+            if (format.test(section.section)) {
+              return;
+            } else {
               return (
                 <ListItem key={i}>
-                  <Link className="link" to={`/${section.section}`}>
+                  <Link
+                    className="link"
+                    to={`/${section.section}`}
+                    onClick={toggleLeftMenu(false)}
+                  >
                     {section.display_name}
                   </Link>
                 </ListItem>
               );
-            }         
+            }
           })}
         </List>
       </Drawer>

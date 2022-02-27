@@ -12,13 +12,15 @@ function Home() {
 
   if (currentLocation.pathname === "/") {
     sectionPath = "home";
+  } else if (currentLocation.pathname === "/null") {
+    sectionPath = "";
   } else {
     sectionPath = currentLocation.pathname.replace("/", "");
   }
 
   return (
     <SectionContext.Provider value={sectionPath}>
-      <Container>
+      <Container className="main">
         <Header />
         <Outlet />
         <Footer />

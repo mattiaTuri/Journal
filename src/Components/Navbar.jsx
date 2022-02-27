@@ -4,9 +4,8 @@ import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { SectionContext } from "../Home";
 
-function Navbar({currentDate}) {
-
-  const sectionPath = useContext(SectionContext)
+function Navbar({ currentDate }) {
+  const sectionPath = useContext(SectionContext);
 
   return (
     <nav className="navbar">

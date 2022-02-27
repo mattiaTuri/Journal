@@ -19,15 +19,11 @@ function Articles() {
       ".json?api-key=r2AHYUrfA3Tx5WPFUGltSMqASSPhXY4T"
   );
 
-  if(loading){
-    return(
-      <Loading/>
-    )
-  }else if(status == 404){
-    return(
-      <Error/>
-    )
-  }else{
+  if (loading) {
+    return <Loading />;
+  } else if (status == 404) {
+    return <Error />;
+  } else {
     return (
       <div className="section-article">
         {articles.map((article, i) => {
@@ -50,15 +46,17 @@ function Articles() {
                     {article.title || "Latest news"}
                   </Typography>
                   <Typography
-                    variant="subtitle1"
-                    component="body1"
+                    variant="body1"
+                    component="p"
                     sx={{ fontWeight: "bold" }}
                     gutterBottom
                   >
                     {article.abstract}
                   </Typography>
                   <Typography sx={{ fontWeight: "bold" }}>
-                    <Link href={article.url} target="_blank">Continue reading</Link>
+                    <Link href={article.url} target="_blank">
+                      {article.url == "null" ? "" : "Continue reading"}
+                    </Link>
                   </Typography>
                 </CardContent>
                 <CardMedia
