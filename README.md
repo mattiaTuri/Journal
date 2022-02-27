@@ -4,7 +4,9 @@ L’applicativo in questione è una rivisitazione del New York Times.
 La pagina web è divisa per sezioni e, tramite una chiamata api, raccoglie tutti gli articoli per categoria e li reinderizza sottoforma di card visualizzandone:
 
 •	Titolo
+
 •	Breve descrizione
+
 •	Immagine.
 
 Ogni articolo ha poi un link che rimanda alla pagina completa dove è possibile leggere l’articolo.
@@ -13,7 +15,9 @@ Le sezioni presentano ognuna un articolo principale (solitamente quello nuovo) c
 Tools utilizzati:
 
 •	MUI libreria grafica
+
 •	React routers
+
 •	Axios per le chiamate api
 
 Il sito web è completamente responsive.
