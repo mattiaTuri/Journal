@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7a80da1d.css",
+    "main.js": "/static/js/main.ed2ee505.js",
+    "static/media/Takota.ttf": "/static/media/Takota.95e4b54b25147b214b5f.ttf",
+    "index.html": "/index.html",
+    "main.7a80da1d.css.map": "/static/css/main.7a80da1d.css.map",
+    "main.ed2ee505.js.map": "/static/js/main.ed2ee505.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a80da1d.css",
+    "static/js/main.ed2ee505.js"
+  ]
+}
