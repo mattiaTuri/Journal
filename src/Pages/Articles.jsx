@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
 import useAxios from "../Hooks/useAxios";
 import Article from "./Article";
 import { Typography } from "@mui/material";

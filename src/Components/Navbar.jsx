@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { SectionContext } from "../Home";
