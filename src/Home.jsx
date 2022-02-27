@@ -12,8 +12,6 @@ function Home() {
 
   if (currentLocation.pathname === "/") {
     sectionPath = "home";
-  } else if (currentLocation.pathname === "/null") {
-    sectionPath = "";
   } else {
     sectionPath = currentLocation.pathname.replace("/", "");
   }
