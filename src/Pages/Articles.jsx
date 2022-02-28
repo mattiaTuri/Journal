@@ -25,7 +25,7 @@ function Articles() {
 
   if (loading) {
     return <Loading />;
-  } else if (status == 404) {
+  } else if (status === 404) {
     return <Error />;
   } else {
     return (
@@ -55,7 +55,7 @@ function Articles() {
               </Typography>
               <Typography sx={{ fontWeight: "bold" }}>
                 <Link href={firstArticle.url} target="_blank">
-                  {firstArticle.url == "null" ? "" : "Continue reading"}
+                  {firstArticle.url === "null" ? "" : "Continue reading"}
                 </Link>
               </Typography>
             </CardContent>
@@ -67,7 +67,7 @@ function Articles() {
           </Card>
         <div className="sub-article">
           {newArticleList.map((article, i) => {
-            if (article.title != "" ) {
+            if (article.title !== "" ) {
               return (
                 <Article
                   key={i}
