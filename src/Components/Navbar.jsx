@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import { SectionContext } from "../Home";
 
 function Navbar({ currentDate }) {
@@ -8,7 +9,7 @@ function Navbar({ currentDate }) {
 
   return (
     <nav className="navbar">
-      <div className="date-mobile">
+      <Box className="date-mobile">
         <Typography
           className="date"
           variant="button"
@@ -20,13 +21,13 @@ function Navbar({ currentDate }) {
         <Typography variant="body2" gutterBottom>
           Article section: <strong>{sectionPath.toUpperCase()}</strong>
         </Typography>
-      </div>
+      </Box>
 
       <NavLink className="nav-link" to="/arts">
         Arts
       </NavLink>
-      <NavLink className="nav-link" to="/business">
-        Business
+      <NavLink className="nav-link" to="/books">
+        Books
       </NavLink>
       <NavLink className="nav-link" to="/science">
         Science

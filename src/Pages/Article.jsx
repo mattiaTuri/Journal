@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import { Link } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -29,7 +28,9 @@ function Article({ title, img, description, info }) {
             {description}
           </Typography>
           <Typography sx={{ fontWeight: "bold" }}>
-            <Link href={info} target="_blank">Continue reading</Link>
+            <Link href={info} target="_blank">
+              Continue reading
+            </Link>
           </Typography>
         </CardContent>
         <CardMedia component="img" sx={{ width: 151 }} image={img} />
@@ -37,15 +38,5 @@ function Article({ title, img, description, info }) {
     </>
   );
 }
-
-Article.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.object.isRequired,
-  description: PropTypes.string.isRequired,
-};
-
-Article.defaultProps = {
-  title: "News of the day",
-};
 
 export default Article;

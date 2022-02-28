@@ -11,6 +11,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import header from "../Assets/css/header.css";
 import { SectionContext } from "../Home";
 import moment from "moment";
@@ -37,7 +38,7 @@ function Header() {
         variant="dense"
         sx={{ justifyContent: "center" }}
       >
-        <div className="date date-desktop">
+        <Box className="date date-desktop">
           <Typography
             className="date"
             variant="button"
@@ -49,7 +50,7 @@ function Header() {
           <Typography variant="body2">
             Article section: <strong>{sectionPath.toUpperCase()}</strong>
           </Typography>
-        </div>
+        </Box>
         <Link to="/" className="header-title">
           World Journal
         </Link>

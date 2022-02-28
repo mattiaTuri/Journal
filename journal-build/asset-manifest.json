@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.469779f2.css",
+    "main.js": "/static/js/main.4c9530d1.js",
+    "static/media/Takota.ttf": "/static/media/Takota.95e4b54b25147b214b5f.ttf",
+    "static/media/default-news.png": "/static/media/default-news.46ca9a0b6d6f0a29b64b.png",
+    "index.html": "/index.html",
+    "main.469779f2.css.map": "/static/css/main.469779f2.css.map",
+    "main.4c9530d1.js.map": "/static/js/main.4c9530d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.469779f2.css",
+    "static/js/main.4c9530d1.js"
+  ]
+}
