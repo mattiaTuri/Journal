@@ -1,0 +1,53 @@
+.MuiCard-root {
+    width: 100%;
+  }
+  
+  .main-article {
+    margin-top: 0 !important;
+  }
+  
+  .main-article-image {
+    height: 300px;
+  }
+  
+  .main-article-content {
+    color: white;
+  }
+  
+  .spinner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media screen and (min-width: 800px) {
+    .sub-article {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .main-article-content {
+      width: 60%;
+    }
+  
+    h5 {
+      font-size: 40px !important;
+    }
+  
+    .card-article {
+      height: 250px;
+    }
+  }
