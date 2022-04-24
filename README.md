@@ -16,13 +16,13 @@ Tools utilizzati:
 
 •	MUI libreria grafica
 
-•	React routers
+•	React router
 
 •	Axios per le chiamate api
 
 Il sito web è completamente responsive.
 
-Desktop layout:
+Desktop layout
 
 ![journal-desktop](https://user-images.githubusercontent.com/85845784/155899727-23737659-a9df-470d-9b9a-aa705cd41ce4.png)
 
