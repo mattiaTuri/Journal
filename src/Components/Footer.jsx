@@ -1,23 +1,25 @@
 import React from "react";
-import footer from "../Assets/css/footer.css";
-
 import { Typography } from "@mui/material";
 import { textAlign } from "@mui/system";
+import Box from "@mui/material/Box"
 
 function Footer() {
   return (
-    <footer>
-      <Typography variant="h6" sx={{ textAlign: "center" }}>
+    <footer >
+      <Box sx={{mt:5, borderTop:1, borderColor:"black"}}>
+      <Typography component="span" display="block" sx={{ textAlign: "center" }}>
         World Journal
       </Typography>
       <Typography
         variant="caption"
+        component="p"
         display="block"
         gutterBottom
         sx={{ textAlign: "center" }}
       >
         © 2022 The world journal company
       </Typography>
+      </Box>   
     </footer>
   );
 }

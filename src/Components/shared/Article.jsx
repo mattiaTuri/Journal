@@ -17,13 +17,13 @@ function Article({ title, img, description, info }) {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h6" element="h6">
+          <Typography variant="h6" component="h2">
             {title}
           </Typography>
           <Typography
             variant="subtitle2"
             color="text.secondary"
-            element="body2"
+            component="h3"
           >
             {description}
           </Typography>

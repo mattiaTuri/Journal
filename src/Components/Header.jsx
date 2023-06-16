@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import useAxios from "../Hooks/useAxios";
+import useAxios from "../hooks/useAxios";
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
 import { Drawer } from "@mui/material";
@@ -41,8 +41,7 @@ function Header() {
         <Box className="date date-desktop">
           <Typography
             className="date"
-            variant="button"
-            display="block"
+            component="p"
             gutterBottom
           >
             {currentDate}

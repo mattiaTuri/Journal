@@ -31,7 +31,7 @@
   }
   
   @media screen and (min-width: 800px) {
-    .sub-article {
+    .articles-list {
       display: grid;
       grid-template-columns: auto auto;
       column-gap: 30px;

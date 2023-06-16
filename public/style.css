@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Takota";
+  src: url("../src/Assets/font/Takota.ttf");
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -19,4 +24,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+}
+
+span{
+  font-family: "Takota" !important;
 }

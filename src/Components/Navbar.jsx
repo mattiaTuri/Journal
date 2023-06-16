@@ -12,8 +12,7 @@ function Navbar({ currentDate }) {
       <Box className="date-mobile">
         <Typography
           className="date"
-          variant="button"
-          display="block"
+          component="p"
           gutterBottom
         >
           {currentDate}
